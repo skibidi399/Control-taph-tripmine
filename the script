@@ -20,29 +20,12 @@ toggleButton.TextColor3 = Color3.new(1, 1, 1)
 toggleButton.TextScaled = true
 toggleButton.Parent = screenGui
 
-local controlModes = { "TP", "Client", "InvisibleTP" }
-local controlModeIndex = 1
-local controlMode = controlModes[controlModeIndex]
-
-local modeButton = Instance.new("TextButton")
-modeButton.Size = UDim2.new(0, 180, 0, 40)
-modeButton.Position = UDim2.new(0, 10, 0, 70)
-modeButton.Text = "Control Mode: TP"
-modeButton.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
-modeButton.TextColor3 = Color3.new(1, 1, 1)
-modeButton.TextScaled = true
-modeButton.Parent = screenGui
-
-modeButton.MouseButton1Click:Connect(function()
-	controlModeIndex = (controlModeIndex % #controlModes) + 1
-	controlMode = controlModes[controlModeIndex]
-	modeButton.Text = "Control Mode: " .. controlMode
-end)
+local controlMode = "TP"
 
 local speed = 20
 local speedBox = Instance.new("TextBox")
 speedBox.Size = UDim2.new(0, 180, 0, 40)
-speedBox.Position = UDim2.new(0, 10, 0, 120)
+speedBox.Position = UDim2.new(0, 10, 0, 70)
 speedBox.Text = tostring(speed)
 speedBox.PlaceholderText = "Speed"
 speedBox.BackgroundColor3 = Color3.fromRGB(90, 90, 90)
